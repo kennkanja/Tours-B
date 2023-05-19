@@ -1,0 +1,8 @@
+<h1>Django Image Uploading</h1>
+<ul>
+  {% for tour in object_list %}
+    <h2>{{ tour.title }}</h2>
+    <p>{{tour.desc}}</p>
+    <img src="{{ tour.cover.url}}" alt="{{ tour.title }}">
+  {% endfor %}
+</ul>
