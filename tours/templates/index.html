@@ -1,5 +1,8 @@
 
 {% load static %}
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +19,11 @@
 
 
     {% include 'nav.html' %}
-
     
     
-    {% block packages %}
+    
+    
+    
     <section class="packages" id="packages">
         <h1 class="heading">
             <span>p</span>
@@ -34,14 +38,14 @@
         </h1>
 
         <div class="box-container">
-            {% for pack in object_list %}
+            {% for site in object_list %}
             <div class="box">
 
                 
-                <img src="{{ pack.cover.url}}" alt="{{ pack.title }}">
+                <img src="{{ site.cover.url}}" alt="{{site.title}}">
                 <div class="content">
-                    <h3><i class="fas fa-map-marker-alt"></i>{{ pack.title }}</h3>
-                    <p>{{pack.desc}}</p>
+                    <h3><i class="fas fa-map-marker-alt"></i>{{ site.title }}</h3>
+                    <p>{{site.desc}}</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -50,7 +54,43 @@
                         <i class="fas fa-star"></i>
                     </div>
                    
-                    <a href="{{pack.links}}" class="btn">Learn More</a>
+                    <a href="fly.html" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="box">
+
+                
+                <img src="{{ site.cover.url}}" alt="{{site.title}}">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>{{ site.title }}</h3>
+                    <p>{{site.desc}}</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                   
+                    <a href="fly.html" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="box">
+
+                
+                <img src="{{ site.cover.url}}" alt="{{site.title}}">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>{{ site.title }}</h3>
+                    <p>{{site.desc}}</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                   
+                    <a href="fly.html" class="btn">Learn More</a>
                 </div>
             </div>
 
@@ -61,7 +101,7 @@
         </div>
     </section>
      
-    {% endblock %}
+    
     
 
 

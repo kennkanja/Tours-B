@@ -24,6 +24,9 @@ urlpatterns = [
     path('services/',include('tours.urls')),
     path('gallery/',include('tours.urls')),
     path('book/',include('tours.urls')),
+    path('sites/',include('tours.urls')),
+    path('reservation/',include('tours.urls')),
+    path('term/',include('tours.urls')),
     path('admin/', admin.site.urls),
 ]
 
