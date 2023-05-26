@@ -2,7 +2,7 @@ from django.views.generic import ListView,CreateView
 from django.urls import reverse_lazy
 
 from .forms import ContactForm, ReservationForm
-from .models import KDHC001, KDHC002, KDHC003, KDHC004, KDHC005, KDHC006, KDHC007, KDHC008, KDHC009, KDHL001, KDHL002, KDHL003, KDHL004, KDHL005, KDHL006, KDHL007, KDHL008, KDHL009, KDHL010, KDHL011, KDHL012, KDHT001, KDHT002, KDHT003, KDHT004, Camp, Capetown, Day001, Day002, Day003, Day004, Day005, Day006, Day007, Day008, Day009, Day010, Day011, Day012, Day013, Day014, Day015, Day016, Day017, Day018, Day019, Day020, Day021, Day022, Dubai, Excursion, Fly, Hotel, Lodge, Logo, Maldive, Mara, Moon, Mountain, Reservation, Shopping, Short, Tour, Tsafari, Video, Zanzibar
+from .models import KDHC001, KDHC002, KDHC003, KDHC004, KDHC005, KDHC006, KDHC007, KDHC008, KDHC009, KDHL001, KDHL002, KDHL003, KDHL004, KDHL005, KDHL006, KDHL007, KDHL008, KDHL009, KDHL010, KDHL011, KDHL012, KDHT001, KDHT002, KDHT003, KDHT004, Camp, Capetown, Day001, Day002, Day003, Day004, Day005, Day006, Day007, Day008, Day009, Day010, Day011, Day012, Day013, Day014, Day015, Day016, Day017, Day018, Day019, Day020, Day021, Day022, Dubai, Excursion, Fly, Hotel, Lodge, Logo, Maldive, Mara, Moon, Mountain, Poster001, Poster002, Poster003, Poster004, Reservation, Shopping, Short, Tour, Tsafari, Video, Zanzibar
 from .models import Pack
 from .models import Serv
 from .models import Gallery
@@ -325,3 +325,20 @@ class KDHT003PageView(ListView):
 class KDHT004PageView(ListView):
     model = KDHT004
     template_name = "KDHT004.html"
+
+#posters ++++ 
+class Poster001PageView(ListView):
+    model = Poster001
+    template_name = "maldive.html"
+
+class Poster002PageView(ListView):
+    model = Poster002
+    template_name = "maldive.html"
+
+class Poster003PageView(ListView):
+    model = Poster003
+    template_name = "maldive.html"
+
+class Poster004PageView(ListView):
+    model = Poster004
+    template_name = "maldive.html"

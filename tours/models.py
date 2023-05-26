@@ -564,3 +564,34 @@ class KDHT004(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+#poster +++ 
+class Poster001(models.Model):
+    title = models.CharField(max_length=50)
+    cover = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.title
+
+class Poster002(models.Model):
+    title = models.CharField(max_length=50)
+    cover = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.title
+
+class Poster003(models.Model):
+    title = models.CharField(max_length=50)
+    cover = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.title
+
+class Poster004(models.Model):
+    title = models.CharField(max_length=50)
+    cover = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.title

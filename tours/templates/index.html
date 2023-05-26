@@ -27,12 +27,13 @@
      
         {% for video in object_list %}
         <div class="controls">
-         <span autoplay="autoplay" controls="controls" preload="preload"  class="vid-btn active" data-src="{{video.cover.url}}"></span>
+         <span autoplay controls="controls" preload="preload"  class="vid-btn active" data-src="/media/videos/vid1.mp4" type="video/mp4"></span>
          
-         <span class="vid-btn" data-src="{{video.cover.url}}"></span>
+         <span autoplay preload="preload" class="vid-btn" data-src="/media/videos/vid1.mp4" type="video/mp4"></span>
         </div>
         <div class="video-container">
-         <video autoplay="autoplay" controls="controls" preload="preload" src="{{video.cover.url}}" id="video-slider"></video>
+         <video autoplay controls="controls" preload="preload" src="/media/videos/vid1.mp4" id="video-slider" type="video/mp4"></video>
+         
         </div>
         {% endfor %}
      </section>

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import AboutPageView, BookPageView, CampPageView, CapetownPageView, ContactPageView, CreateContactView, CreateReservationView, Day001PageView, Day002PageView, Day003PageView, Day004PageView, Day005PageView, Day006PageView, Day007PageView, Day008PageView, Day009PageView, Day010PageView, Day011PageView, Day012PageView, Day013PageView, Day014PageView, Day015PageView, Day016PageView, Day017PageView, Day018PageView, Day019PageView, Day020PageView, Day021PageView, Day022PageView, DubaiPageView, ExcursionPageView, FlyPageView, HomePageView, HotelPageView, KDHC001PageView, KDHC002PageView, KDHC003PageView, KDHC004PageView, KDHC005PageView, KDHC006PageView, KDHC007PageView, KDHC008PageView, KDHC009PageView, KDHL001PageView, KDHL002PageView, KDHL003PageView, KDHL004PageView, KDHL005PageView, KDHL006PageView, KDHL007PageView, KDHL008PageView, KDHL009PageView, KDHL010PageView, KDHL011PageView, KDHL012PageView, KDHT001PageView, KDHT002PageView, KDHT003PageView, KDHT004PageView, LodgePageView, LogoPageView, MaldivePageView, MaraPageView, MoonPageView, MountainPageView,PackPageView, ReservationPageView, ServPageView,GalleryPageView, ShoppingPageView, ShortPageView, TermPageView, TsafariPageView, VideoPageView, ZanzibarPageView
+from .views import AboutPageView, BookPageView, CampPageView, CapetownPageView, ContactPageView, CreateContactView, CreateReservationView, Day001PageView, Day002PageView, Day003PageView, Day004PageView, Day005PageView, Day006PageView, Day007PageView, Day008PageView, Day009PageView, Day010PageView, Day011PageView, Day012PageView, Day013PageView, Day014PageView, Day015PageView, Day016PageView, Day017PageView, Day018PageView, Day019PageView, Day020PageView, Day021PageView, Day022PageView, DubaiPageView, ExcursionPageView, FlyPageView, HomePageView, HotelPageView, KDHC001PageView, KDHC002PageView, KDHC003PageView, KDHC004PageView, KDHC005PageView, KDHC006PageView, KDHC007PageView, KDHC008PageView, KDHC009PageView, KDHL001PageView, KDHL002PageView, KDHL003PageView, KDHL004PageView, KDHL005PageView, KDHL006PageView, KDHL007PageView, KDHL008PageView, KDHL009PageView, KDHL010PageView, KDHL011PageView, KDHL012PageView, KDHT001PageView, KDHT002PageView, KDHT003PageView, KDHT004PageView, LodgePageView, LogoPageView, MaldivePageView, MaraPageView, MoonPageView, MountainPageView,PackPageView, Poster001PageView, Poster002PageView, Poster003PageView, Poster004PageView, ReservationPageView, ServPageView,GalleryPageView, ShoppingPageView, ShortPageView, TermPageView, TsafariPageView, VideoPageView, ZanzibarPageView
 
 urlpatterns =[
     path("", HomePageView.as_view(), name="home"),
@@ -85,13 +85,21 @@ urlpatterns =[
     path("services/short/Day014", Day014PageView.as_view(), name="Day014"),
     path("services/short/Day007", Day007PageView.as_view(), name="Day007"),
     path("services/short/Day006", Day006PageView.as_view(), name="Day006"),
-    #forms
-
+   
+    #tsafari +++
     path("services/tsafari/KDHT001", KDHT001PageView.as_view(), name="KDHT001"),
     path("services/tsafari/KDHT002", KDHT002PageView.as_view(), name="KDHT002"),
     path("services/tsafari/KDHT003", KDHT003PageView.as_view(), name="KDHT003"),
     path("services/tsafari/KDHT004", KDHT004PageView.as_view(), name="KDHT004"),
+    
+    #psoter ++++
+    path("services/maldive/poster", Poster001PageView.as_view(), name="maldive_poster"),
+    path("services/dubai/poster", Poster002PageView.as_view(), name="maldive_poster"),
+    path("services/zanzibar/poster", Poster003PageView.as_view(), name="maldive_poster"),
+    path("services/capetown/poster", Poster004PageView.as_view(), name="maldive_poster"),
 
+
+    #forms
     path("reserve/",CreateReservationView.as_view(), name="add_post"),
     path("us/",CreateContactView.as_view(), name="add_contact")
 

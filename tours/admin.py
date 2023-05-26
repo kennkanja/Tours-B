@@ -25,6 +25,10 @@ from .models import  Mara
 from .models import  Tsafari
 from .models import  Video
 from .models import  Logo
+from .models import  Poster001
+from .models import  Poster002
+from .models import  Poster003
+from .models import  Poster004
 
 
 admin.site.register(Tour)
@@ -52,6 +56,10 @@ admin.site.register(Moon)
 admin.site.register(Tsafari)
 admin.site.register(Video)
 admin.site.register(Logo)
+admin.site.register(Poster001)
+admin.site.register(Poster002)
+admin.site.register(Poster003)
+admin.site.register(Poster004)
 
 
 
