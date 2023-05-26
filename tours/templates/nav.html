@@ -17,8 +17,9 @@
 
 <header>
     <div id="menu-bar" class="fas fa-bars"></div>
-
-    <img src="images/logo.png" alt="" class="logo">
+    {% for logo in object_list %}{% if logo == 0 %}
+    <img src="{{logo.cover.url}}" alt="{{logo.title}}" class="logo">
+    {% endif%}{% endfor %}
     <nav class="navbar">
         <a href="/">home</a>
         <a href="/packages">packages</a>
@@ -26,8 +27,8 @@
         <a href="/book">book</a>
         <a href="/gallery">gallery</a>
         <a href="/terms">Terms</a>
-        <a href="aboutus.html">about us</a>
-        <a href="contactus.html">contact us</a>
+        <a href="/about">about us</a>
+        <a href="/us">contact us</a>
 
     </nav>
 
@@ -66,3 +67,4 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="{% static script.js %}"></script>
 </body>
+</html>
