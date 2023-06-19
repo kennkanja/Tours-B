@@ -113,10 +113,14 @@ urlpatterns = [
     path('services/tsafari/KDHT004',include('tours.urls')),
 
     #poster ++++
-    path('services/maldive/poster',include('tours.urls')),
-    path('services/dubai/poster',include('tours.urls')),
-    path('services/zanzibar/poster',include('tours.urls')),
-    path('services/capetown/poster',include('tours.urls')),
+    path('services/maldive',include('tours.urls')),
+    path('services/dubai',include('tours.urls')),
+    path('services/zanzibar',include('tours.urls')),
+    path('services/capetown',include('tours.urls')),
+
+    #searchpackages
+    path('', include('tours.urls')),
+
 
    
     path('admin/', admin.site.urls),

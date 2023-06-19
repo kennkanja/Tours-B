@@ -1,8 +1,13 @@
+from django.http import BadHeaderError, HttpResponse
 from django.views.generic import ListView,CreateView
 from django.urls import reverse_lazy
+from django.core.mail import send_mail
+from .forms import ContactForm
+
+
 
 from .forms import ContactForm, ReservationForm
-from .models import KDHC001, KDHC002, KDHC003, KDHC004, KDHC005, KDHC006, KDHC007, KDHC008, KDHC009, KDHL001, KDHL002, KDHL003, KDHL004, KDHL005, KDHL006, KDHL007, KDHL008, KDHL009, KDHL010, KDHL011, KDHL012, KDHT001, KDHT002, KDHT003, KDHT004, Camp, Capetown, Day001, Day002, Day003, Day004, Day005, Day006, Day007, Day008, Day009, Day010, Day011, Day012, Day013, Day014, Day015, Day016, Day017, Day018, Day019, Day020, Day021, Day022, Dubai, Excursion, Fly, Hotel, Lodge, Logo, Maldive, Mara, Moon, Mountain, Poster001, Poster002, Poster003, Poster004, Reservation, Shopping, Short, Tour, Tsafari, Video, Zanzibar
+from .models import KDHC001, KDHC002, KDHC003, KDHC004, KDHC005, KDHC006, KDHC007, KDHC008, KDHC009, KDHL001, KDHL002, KDHL003, KDHL004, KDHL005, KDHL006, KDHL007, KDHL008, KDHL009, KDHL010, KDHL011, KDHL012, KDHT001, KDHT002, KDHT003, KDHT004, Camp, Capetown, Day001, Day002, Day003, Day004, Day005, Day006, Day007, Day008, Day009, Day010, Day011, Day012, Day013, Day014, Day015, Day016, Day017, Day018, Day019, Day020, Day021, Day022, Dubai, Excursion, Fly, Hotel, Lodge, Logo, Maldive, Mara, Moon, Mountain, Poster001, Poster002, Poster003, Poster004, Reservation, SearchPackages, Shopping, Short, Tour, Tsafari, Video, Zanzibar
 from .models import Pack
 from .models import Serv
 from .models import Gallery
@@ -10,6 +15,11 @@ from .models import Book
 from .models import  Term
 from .models import  About
 from .models import  Contact
+
+from django.shortcuts import redirect, render
+from .models import Pack
+from .forms import PackSearchForm
+
 
 #forms
 class CreateReservationView(CreateView):
@@ -175,7 +185,7 @@ class KDHL011PageView(ListView):
     template_name = "KDHL011.html"
 
 class KDHL012PageView(ListView):
-    model = KDHL012
+    model = KDHL012 
     template_name = "KDHL012.html"
 
 
@@ -342,3 +352,42 @@ class Poster003PageView(ListView):
 class Poster004PageView(ListView):
     model = Poster004
     template_name = "maldive.html"
+
+
+#search_packages
+
+class SearchPackagesPageView(ListView):
+    model = SearchPackages
+    template_name = "search_packages.html"    
+
+def search_packages(request):
+    if request.method == 'GET':
+        form = PackSearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = Pack.objects.filter(name__icontains=query)
+            return render(request, 'search_results.html', {'results': results})
+    else:
+        form = PackSearchForm()
+    return render(request, 'search_form.html', {'form': form})
+
+
+def contactView(request):
+    if request.method == "GET":
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data["subject"]
+            email = form.cleaned_data["email"]
+            name = form.cleaned_data['name']
+            phone = form.cleaned_data['phone']
+            try:
+                send_mail(subject,name,phone, email, ["kennkanja@gmail.com"])
+            except BadHeaderError:
+                return HttpResponse("Invalid header found.")
+            return redirect("success")
+    return render(request, "contactus.html", {"form": form})
+
+def successView(request):
+    return HttpResponse("Success! Thank you for your message.")

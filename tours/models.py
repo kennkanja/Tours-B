@@ -595,3 +595,14 @@ class Poster004(models.Model):
 
     def __str__(self):
         return self.title
+
+
+#searchPackages
+class SearchPackages(models.Model):
+    title = models.CharField(max_length=50)
+    dest = models.CharField(max_length=50)
+    links= models.CharField(max_length=50)
+    
+
+    def __str__(self):
+        return self.title
